@@ -1,0 +1,348 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+:root {
+    --dark-grey: hsl(234, 29%, 20%);
+    --grey: hsl(234, 17%, 26%);
+    --light-grey: hsla(243, 28%, 13%, 0.25);
+    --white: hsl(0, 0%, 100%);
+    --error: hsl(4, 100%, 67%);
+    --bg-error: hsla(4, 100%, 67%, .15);
+    --red-1: hsl(14, 100%, 61%);
+    --red-2: hsl(346, 100%, 66%);
+    --button-hover: linear-gradient(var(--red-1), var(--red-2));
+
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+
+.hide {
+    display: none;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    min-height: 100vh;
+    color: var(--dark-grey);
+    background-color: var(--grey);
+    overflow: hidden;
+
+}
+
+.container {
+    width: 100%;
+    max-width: 58rem;
+    /* min-height: 100vh; */
+    background-color: var(--white);
+    opacity: 1;
+    transform: scale(1);
+    transition: 0.3s ease-in-out;
+
+}
+
+
+.hero img {
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+.content {
+    /* max-width: 25rem; */
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem;
+}
+
+.title {
+    font-size: 2.5rem;
+    line-height: 1;
+    margin-bottom: 1.5rem;
+}
+
+.description {
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+}
+
+.list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: .625rem;
+    margin-bottom: 2.5rem;
+
+}
+
+.list li {
+    display: flex;
+    align-items: start;
+    gap: 1rem;
+}
+
+.list li img {
+    max-width: 1.3125rem;
+}
+
+.mail {
+    position: relative;
+}
+
+.small {
+    font-size: .75rem;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: .5rem;
+}
+
+.error {
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: var(--error);
+}
+
+input {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--dark-grey);
+    border: 1px solid var(--light-grey);
+    outline: none;
+    border-radius: .5rem;
+}
+
+input::placeholder {
+    color: var(--grey);
+}
+
+input:focus {
+    border-color: var(--dark-grey);
+}
+
+input.error-mail {
+    border-color: var(--error);
+    background-color: var(--bg-error);
+    color: var(--error);
+}
+
+.btn {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    margin-top: 1.5rem;
+    border: none;
+    outline: none;
+    background-color: var(--dark-grey);
+    color: var(--white);
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.5;
+    width: 100%;
+    padding-block: 1rem;
+    border-radius: .5rem;
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.btn:before {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    content: "Subscribe to monthly newsletter";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--button-hover);
+    transition: 0.2s ease-in-out;
+    opacity: 0;
+}
+
+.btn:hover::before {
+    opacity: 1;
+}
+
+.btn-modal {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    margin-top: 1.5rem;
+    border: none;
+    outline: none;
+    background-color: var(--dark-grey);
+    color: var(--white);
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.5;
+    width: 100%;
+    padding-block: 1rem;
+    border-radius: .5rem;
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.btn-modal:before {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    content: "Dismiss message";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--button-hover);
+    transition: 0.2s ease-in-out;
+    opacity: 0;
+}
+
+.btn-modal:hover::before {
+    opacity: 1;
+}
+
+.success {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--white);
+    opacity: 1;
+    transform: scale(1);
+    transition: 0.3s ease-in-out;
+}
+
+.modal {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    padding: 9.5rem 1.5rem 2.5rem;
+}
+
+.modal img {
+    max-width: 3.875rem;
+    display: block;
+    margin-bottom: 2.5rem;
+}
+
+.modal-title {
+    font-size: 2.5rem;
+    line-height: 1;
+    margin-bottom: 1.5rem;
+}
+
+.modal-description {
+    line-height: 1.5;
+}
+
+.modal-description span {
+    font-weight: 700;
+}
+
+.btn-modal {
+    position: absolute;
+    width: calc(100% - 3rem);
+    bottom: 2.5rem;
+    left: 1.5rem;
+    right: 1.5rem;
+}
+
+.none {
+    opacity: 0;
+    transform: scale(0);
+}
+
+
+@media (width >=48rem) {
+
+    .content {
+        padding-inline: 3rem;
+    }
+
+    .content h1 {
+        font-size: 3.5rem;
+    }
+
+    .list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 2rem;
+    }
+
+    .success {
+        max-width: 31.25rem;
+        height: auto;
+        border-radius: 2.25rem;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    .modal {
+        padding: 4rem;
+    }
+
+    .btn-modal {
+        position: relative;
+        width: calc(100% - 8rem);
+        left: 4rem;
+    }
+
+    .none {
+        opacity: 0;
+        transform: scale(0);
+    }
+}
+
+@media (width >=56.25rem) {
+    body {
+        display: grid;
+        place-content: center;
+        display: grid;
+        place-content: center;
+    }
+
+    .container {
+        display: grid;
+        grid-auto-flow: column;
+        border-radius: 2.25rem;
+        max-height: auto;
+    }
+
+    .hero {
+        order: 2;
+        margin: 1.5rem;
+        margin-left: 0;
+    }
+
+    .hero img {
+        height: 100%;
+        width: auto;
+    }
+
+    .content {
+        padding-inline: 4rem;
+        align-self: center;
+        max-width: 32rem;
+    }
+
+    .list {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .content h1 {
+        font-size: 3.5rem;
+    }
+}
